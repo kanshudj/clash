@@ -1,2 +1,1 @@
-# clash
-CLASH FOR OPENWRT
+removed
