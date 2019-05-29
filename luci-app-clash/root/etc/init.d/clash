@@ -71,7 +71,7 @@ if [ $mode -eq 1 ];  then
 		#if [ "$(uci get clash.config.en_mode 2>/dev/null)" = "redns" ]; then
 		#	sed -i '/enhanced-mode:/ d' /etc/clash/config.yml
 		#	sed -i '/fake-ip-range:/ d' /etc/clash/config.yml
-		#	sed -i "/listen:/i\  enhanced-mode: redir-host" /etc/clash/config.yml 
+		#	sed -i "/listen:/i\ enhanced-mode: redir-host" /etc/clash/config.yml 
 		#
 		#elif [ "$(uci get clash.config.en_mode 2>/dev/null)" = "fakeip" ]; then
 		#	sed -i '/enhanced-mode:/ d' /etc/clash/config.yml
@@ -117,7 +117,7 @@ else
 		sed -i "11i\ " /etc/clash/config.yml
 		sed -i '/enhanced-mode:/ d' /etc/clash/config.yml
 		sed -i '/fake-ip-range:/ d' /etc/clash/config.yml
-		sed -i "/listen:/i\  enhanced-mode: redir-host" /etc/clash/config.yml
+		sed -i "/listen:/i\ enhanced-mode: redir-host" /etc/clash/config.yml
 		sed -i '/#=============/ d' /etc/clash/config.yml
 
 fi
@@ -136,7 +136,7 @@ yml_dns_change(){
 
 	   if [ $dns_port -eq 53 ]; then
 	          sed -i '/listen:/ d' /etc/clash/config.yml
-	          sed -i "/nameserver:/i\  listen: 0.0.0.0:7894" /etc/clash/config.yml
+	          sed -i "/nameserver:/i\ listen: 0.0.0.0:7894" /etc/clash/config.yml
 
 		  dns_serve1=$(uci get dhcp.@dnsmasq[0].server 2>/dev/null)
 		  if [ $dns_serve1 ]; then
